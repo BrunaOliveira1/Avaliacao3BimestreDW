@@ -48,15 +48,12 @@ public class MarcaServlet extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             idMarca = Integer.parseInt(request.getParameter("idMarca"));
             nomeMarca = request.getParameter("nomeMarca");
-            marca.setIdMarca(idMarca);
+            marca.setIdMarca(daoMarca.autoIdMarca());
             marca.setNomeMarca(nomeMarca);
-
             daoMarca.inserir(marca);
-
             resultadoMarca = listaMarcasCadastrados();
-
             request.getSession().setAttribute("resultadoMarca", resultadoMarca);
-            response.sendRedirect(request.getContextPath() + "/Paginas/marcaLista.jsp");
+            response.sendRedirect(request.getContextPath() + "/paginas/marcaLista.jsp");
         }
     }
 

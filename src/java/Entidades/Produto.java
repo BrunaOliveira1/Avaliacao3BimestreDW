@@ -196,5 +196,5 @@ public class Produto implements Serializable {
     public String toString() {
         return "Entidades.Produto[ idProduto=" + idProduto + " ]";
     }
-
+    
 }

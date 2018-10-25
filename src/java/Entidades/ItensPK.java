@@ -76,5 +76,5 @@ public class ItensPK implements Serializable {
     public String toString() {
         return "Entidades.ItensPK[ cadastroProdutoIdProduto=" + cadastroProdutoIdProduto + ", vendaIdVenda=" + vendaIdVenda + " ]";
     }
-
+    
 }

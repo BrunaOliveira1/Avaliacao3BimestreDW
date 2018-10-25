@@ -42,7 +42,7 @@ public class TipoServlet extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             idTipo = Integer.parseInt(request.getParameter("idTipo"));
             nomeTipo = request.getParameter("nomeTipo");
-            tipo.setIdTipo(idTipo);
+            tipo.setIdTipo(daoTipo.autoIdTipo());
             tipo.setNomeTipo(nomeTipo);
 
             daoTipo.inserir(tipo);
@@ -51,7 +51,7 @@ public class TipoServlet extends HttpServlet {
             resultadoTipo = listaTiposCadastrados();
 
             request.getSession().setAttribute("resultadoTipo", resultadoTipo);
-            response.sendRedirect(request.getContextPath() + "/Paginas/tipoLista.jsp");
+            response.sendRedirect(request.getContextPath() + "/paginas/tipoLista.jsp");
         }
     }
 

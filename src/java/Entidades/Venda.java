@@ -95,5 +95,5 @@ public class Venda implements Serializable {
     public String toString() {
         return "Entidades.Venda[ idVenda=" + idVenda + " ]";
     }
-
+    
 }

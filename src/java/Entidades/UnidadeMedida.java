@@ -98,5 +98,5 @@ public class UnidadeMedida implements Serializable {
     public String toString() {
         return "Entidades.UnidadeMedida[ idUnidadeMedida=" + idUnidadeMedida + " ]";
     }
-
+    
 }

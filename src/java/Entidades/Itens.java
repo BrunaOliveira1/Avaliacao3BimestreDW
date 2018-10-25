@@ -123,5 +123,5 @@ public class Itens implements Serializable {
     public String toString() {
         return "Entidades.Itens[ itensPK=" + itensPK + " ]";
     }
-
+    
 }

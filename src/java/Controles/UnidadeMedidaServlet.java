@@ -47,13 +47,13 @@ public class UnidadeMedidaServlet extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             idUnidadeMedida = Integer.parseInt(request.getParameter("idUnidadeMedida"));
             nomeUnidadeMedida = request.getParameter("nomeUnidadeMedida");
-            unidadeMedida.setIdUnidadeMedida(idUnidadeMedida);
+            unidadeMedida.setIdUnidadeMedida(daoUnidadeMedida.autoIdUnidadeMedida());
             unidadeMedida.setNomeUnidadeMedida(nomeUnidadeMedida);
             daoUnidadeMedida.inserir(unidadeMedida);
             resultadoUnidade = listaUnidadeMedidasCadastrados();
 
             request.getSession().setAttribute("resultadoUnidade", resultadoUnidade);
-            response.sendRedirect(request.getContextPath() + "/Paginas/unidadeMedidaLista.jsp");
+            response.sendRedirect(request.getContextPath() + "/paginas/unidadeMedidaLista.jsp");
         }
     }
 

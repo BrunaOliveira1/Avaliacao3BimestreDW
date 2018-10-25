@@ -1,10 +1,6 @@
 <!DOCTYPE html>
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
-
 <html lang="en">
-    <jsp:useBean id="daoMarca" class="DAOs.DAOMarca"/>
-    <jsp:useBean id="daoTipo" class="DAOs.DAOTipo"/>
-    <jsp:useBean id="daoUnidadeMedida" class="DAOs.DAOUnidadeMedida"/>
+
     <head>
 
         <meta charset="utf-8">
@@ -63,6 +59,9 @@
                             <a href="cadastroProduto.jsp">Cadastro dos Produtos</a>
                         </li>
                         <li>
+                            <a href="cadastroCliente.jsp">Cadastro dos Clientes</a>
+                        </li>
+                        <li>
                             <a href=""><i class="fa fa-edit fa-fw"></i> Listas</a></li>
                         <li>
                             <a href="unidadeMedidaLista.jsp">Lista das Unidades de Medida</a>
@@ -76,6 +75,9 @@
                         <li>
                             <a href="produtoLista.jsp">Lista dos Produtos</a>
                         </li>
+                        <li>
+                            <a href="clienteLista.jsp">Lista dos Clientes</a>
+                        </li>
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
@@ -86,7 +88,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Cadastro de Produtos</h1>
+                    <h1 class="page-header">Cadastro Cliente</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -95,63 +97,47 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Preencha dos campos abaixo
+                            Preencha os campos abaixo
                         </div>
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form role="form" action="${pageContext.request.contextPath}/produto">
+                                    <form role="form" action="${pageContext.request.contextPath}/cliente">
                                         <div class="form-group">
-                                            <label>Digite o Id do Produto</label>
-                                            <input class="form-control" name="idProduto">
+                                            <label>Digite o seu CPF</label>
+                                            <input class="form-control" name="cpfCliente">
                                         </div>
                                         <div class="form-group">
-                                            <label>Digite o nome do Produto</label>
-                                            <input class="form-control" name="nomeProduto" >
+                                            <label>Digite seu nome completo</label>
+                                            <input class="form-control" name="nomeCliente" >
                                         </div>
                                         <div class="form-group">
-                                            <label>Digite a data de validade do Produto</label>
-                                            <input class="form-control" name="dataValidade" >
+                                            <label>Digite o seu celular para contato</label>
+                                            <input class="form-control" name="celularCliente" >
                                         </div>
                                         <div class="form-group">
-                                            <label>Digite a data de fabricação do Produto</label>
-                                            <input class="form-control" name="dataFabricacao" >
+                                            <label>Digite seu endereço</label>
+                                            <input class="form-control" name="enderecoCliente" >
                                         </div>
                                         <div class="form-group">
-                                            <label>Digite os benefícios para saúde que o Produto nos oferece</label>
-                                            <input class="form-control" name="beneficioSaude" >
-                                        </div>                                            
-                                        <div class="form-group">
-                                            <label>Digite o preço do Produto</label>
-                                            <input class="form-control" name="precoProduto" >
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Selecione a marca do Produto</label>
-                                            <select class="form-control" name="marcaProduto">
-                                                <option value="">SELECIONE</option>
-                                                <c:forEach var="marc" items="${daoMarca.listInOrderNome()}">
-                                                    <option value="${marc.getIdMarca()}">${marc.getNomeMarca()}</option>
-                                                </c:forEach>
-                                            </select>
+                                            <label>Digite o número da sua casa</label>
+                                            <input class="form-control" name="numeroCasaCliente" >
                                         </div>
                                         <div class="form-group">
-                                            <label>Selecione o tipo do Produto</label>
-                                            <select class="form-control" name="tipoProduto">
-                                                <option value="">SELECIONE</option>
-                                                <c:forEach var="tipo" items="${daoTipo.listInOrderNome()}">
-                                                    <option value="${tipo.getIdTipo()}">${tipo.getNomeTipo()}</option>                                              
-                                                </c:forEach>
-                                            </select>
+                                            <label>Digite o CEP</label>
+                                            <input class="form-control" name="cepCliente" >
                                         </div>
                                         <div class="form-group">
-                                            <label>Selecione a unidade de medida do Produto</label>
-                                            <select class="form-control" name="unidadeMedidaProduto">
-                                                <option value="">SELECIONE</option>
-                                                <c:forEach var="unidade" items="${daoUnidadeMedida.listInOrderId()}">                                                                                                   
-                                                    <option value="${unidade.getIdUnidadeMedida()}">${unidade.getNomeUnidadeMedida()}</option>                                              
-                                                </c:forEach>
-                                            </select>
+                                            <label>Digite sua senha</label>
+                                            <input type="password" class="form-control" name="senhaCliente" >
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Digite o número do seu cartão de crédito</label>
+                                            <input class="form-control" name="numeroCartaoCliente" >
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Digite o número do código de segurança do seu cartão de crédito</label>
+                                            <input class="form-control" name="numeroCodSegCliente" >
                                         </div>
 
                                         <button type="submit" class="btn btn-default" name="ok">Salvar</button>
